@@ -19,3 +19,5 @@ Else statement ends with calling run function on animals to begin the race
 
 
 Referenced Codecademy.com Dragon Slayer Game for Math and remembering how to work the loops.
+
+Referenced other classmates code for more input, Katy, Mark, Sam

@@ -3,11 +3,11 @@ var finishLine = 50;
 var race = true;
 var tired = Math.floor(Math.random());
 
-  function Animal(name, speed, focus, fatigue) {
+  function Animal(name, energy, focus, fatigue) {
     this.name = name;
-    this.speed = speed;
     this.focus = focus;
-    this.fatigue = fatigue;
+    this.speed = focus/energy;
+    this.fatigue = fatigue*tired;
     this.position = 0;
     this.run = function() {
         if (Math.random() * 10 < this.focus) {
@@ -16,8 +16,8 @@ var tired = Math.floor(Math.random());
     };
   }
 
-turtle = new Animal("Yurtle", 2, 10, tired*2);
-rabbit = new Animal("Timmy", 8, 3, tired*8);
+turtle = new Animal("Yurtle", 10, 3, 3);
+rabbit = new Animal("Timmy", 2, 8, 10);
 
   while (race) {
 
