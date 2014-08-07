@@ -1,0 +1,49 @@
+<script>
+var finishLine = 50;
+var race = true;
+var tired = Math.floor(Math.random());
+
+  function Animal(name, speed, focus, fatigue) {
+    this.name = name;
+    this.speed = speed;
+    this.focus = focus;
+    this.fatigue = fatigue;
+    this.position = 0;
+    this.run = function() {
+        if (Math.random() * 10 < this.focus) {
+        this.position += (this.speed - this.fatigue);
+      }
+    };
+  }
+
+turtle = new Animal("Yurtle", 2, 10, tired*2);
+rabbit = new Animal("Timmy", 8, 3, tired*8);
+
+  while (race) {
+
+    if ((turtle.position >= finishLine) && (rabbit.position < finishLine)) {
+      alert(turtle.name + " wins! " + rabbit.name + " made it to " + rabbit.position);
+      race = false;
+    }
+
+    else if ((turtle.position >= finishLine) && (rabbit.position >= finishLine)) {
+      alert("It's a tie!");
+      race = false;
+    }
+
+    else if ((turtle.position < finishLine) && (rabbit.position >= finishLine)) {
+      alert(rabbit.name + " wins! " + turtle.name + " made it to " + turtle.position);
+      race = false;
+    }
+
+    else {
+      alert (rabbit.name + " is " + rabbit.position + " and " + turtle.name + " is " + turtle.position);
+      turtle.run();
+      rabbit.run();
+
+    }
+  }
+
+
+
+</script>
